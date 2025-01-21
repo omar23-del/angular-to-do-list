@@ -3,13 +3,13 @@ const path = require('path');
 
 let mainWindow;
 
-app.on('ready', () => {
+function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
+            nodeIntegration: true,  // تأكد من أنك بحاجة لهذه الميزة في بيئة الإنتاج.
+            contextIsolation: false
         }
     });
 
@@ -19,7 +19,9 @@ app.on('ready', () => {
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
-});
+}
+
+app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -32,3 +34,4 @@ app.on('activate', () => {
         createWindow();
     }
 });
+

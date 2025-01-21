@@ -1,15 +1,15 @@
 {
   "name": "to-do-list",
   "version": "0.0.0",
-"scripts": {
+  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "electron": "ng build --configuration production && electron .",
+    "electron": "ng build --configuration production && electron ./dist/to-do-list",
     "package": "electron-packager . ToDoList --platform=win32 --arch=x64 --out=dist-desktop --overwrite"
-},
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.1.2",
@@ -34,6 +34,7 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
     "electron": "^34.0.0",
+    "electron-packager": "^17.1.2",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
