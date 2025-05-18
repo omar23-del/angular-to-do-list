@@ -1,0 +1,41 @@
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">MY To-Do List</h2>
+
+  <div class="input-group mb-3">
+    <input
+      [(ngModel)]="newtask"
+      type="text"
+      class="form-control input-task"
+      placeholder="Add a new task" />
+    <button class="btn btn-add" (click)="addtask()">Add</button>
+  </div>
+
+  <ul class="list-group">
+    <li
+      class="list-group-item task-item d-flex justify-content-between align-items-center"
+      *ngFor="let task of tasks"
+      [ngClass]="{'task-fade-in': true}"
+      >
+      <span [class.text-decoration-line-through]="task.completed" [ngClass]="{'task-completed': task.completed}">
+        {{task.name}}
+      </span>
+      <div>
+        <button
+          class="btn btn-sm btn-success me-2"
+          (click)="toggleComplete(task.id)">
+          {{ task.completed ? 'Undo' : 'Complete' }}
+        </button>
+        <button
+          class="btn btn-sm btn-warning me-2"
+          (click)="editTask(task.id)">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button class="btn btn-sm btn-danger"
+        (click)="deletetask(task.id)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

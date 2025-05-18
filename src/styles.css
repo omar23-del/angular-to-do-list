@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+.toast-added {
+  background-color: rgba(0, 128, 0, 0.596);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+  margin-top: 5px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.toast-deleted {
+  background-color: rgba(255, 0, 0, 0.505);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+  margin-top: 5px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h2 {
+  color: #FF6F61;
+}
+
+.input-task {
+  border: 2px solid #FF6F61;
+  border-radius: 10px;
+}
+
+.btn-add {
+  background-color: #FF6F61;
+  color: white;
+}
+
+.task-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.task-item.task-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.task-completed {
+  color: #6c757d;
+  text-decoration: line-through;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
